@@ -138,7 +138,8 @@ namespace ScAnalyzer
                     PreviousGuessLabel.Text = "Your Previous Guess Was Right!";
                     // bring a pop up box that displays a celebratory message
                     MessageBox.Show("Congratulations!! You found enough clues to" +
-                        " lead you to another piece of evidence.");
+                        " lead you to another piece of evidence.\nYour number of" +
+                        "guesses was " + ScanAnalyzer.Guesses);
                     // change the RowTextBox text to rows
                     RowTextBox.Text = "rows";
                     // change the ColumTextBox text to rows

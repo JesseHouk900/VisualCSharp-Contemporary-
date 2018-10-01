@@ -222,7 +222,7 @@ namespace ScAnalyzer
             // make previous guess an appropriate size
             previousGuesses = new Point[maxColumns * maxRows];
             // set number of guesses back to 0;
-            numberGuesses = 0;
+            //numberGuesses = 0;
         }
     }
 }
