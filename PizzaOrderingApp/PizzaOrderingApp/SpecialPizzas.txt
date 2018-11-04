@@ -5,7 +5,6 @@ Meat Lover's
 $9.50
 -pepperoni
 -sausage
--chicken
 -bacon
 -ham
 Veggie Supreme
