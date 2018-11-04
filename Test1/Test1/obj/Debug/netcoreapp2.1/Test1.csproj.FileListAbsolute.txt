@@ -1,0 +1,11 @@
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/bin/Debug/netcoreapp2.1/Test1.deps.json
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/bin/Debug/netcoreapp2.1/Test1.runtimeconfig.json
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/bin/Debug/netcoreapp2.1/Test1.runtimeconfig.dev.json
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/bin/Debug/netcoreapp2.1/Test1.dll
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/bin/Debug/netcoreapp2.1/Test1.pdb
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/obj/Debug/netcoreapp2.1/Test1.csprojResolveAssemblyReference.cache
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/obj/Debug/netcoreapp2.1/Test1.csproj.CoreCompileInputs.cache
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/obj/Debug/netcoreapp2.1/Test1.AssemblyInfoInputs.cache
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/obj/Debug/netcoreapp2.1/Test1.AssemblyInfo.cs
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/obj/Debug/netcoreapp2.1/Test1.dll
+/Users/jessehouk/Documents/CS/Repos/VisualCSharp-Contemporary-/Test1/Test1/obj/Debug/netcoreapp2.1/Test1.pdb

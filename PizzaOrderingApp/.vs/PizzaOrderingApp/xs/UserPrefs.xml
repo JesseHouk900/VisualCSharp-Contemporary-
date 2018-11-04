@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{EB1F0209-FC90-427A-9E19-DEB1D0EF119F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PizzaOrderingApp/SpecialPizzas.txt">
+    <Files>
+      <File FileName="PizzaOrderingApp/MenuForm.Designer.cs" Line="1" Column="1" />
+      <File FileName="PizzaOrderingApp/MenuForm.resx" Line="1" Column="1" />
+      <File FileName="PizzaOrderingApp/SpecialPizzas.txt" Line="7" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.PizzaOrderingApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
