@@ -1,0 +1,16 @@
+﻿Pepperoni Supreme
+$7.50
+-double pepperoni
+Meat Lover's
+$9.50
+-pepperoni
+-sausage
+-bacon
+-ham
+Veggie Supreme
+$9
+-red onions
+-black olives
+-mushrooms
+-green bell peppers
+-tomatoes

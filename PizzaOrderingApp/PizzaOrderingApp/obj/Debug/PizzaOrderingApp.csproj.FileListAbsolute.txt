@@ -1,0 +1,10 @@
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\bin\Debug\PizzaOrderingApp.exe.config
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\bin\Debug\PizzaOrderingApp.exe
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\bin\Debug\PizzaOrderingApp.pdb
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.csprojAssemblyReference.cache
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.MenuForm.resources
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.Properties.Resources.resources
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.csproj.GenerateResource.cache
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.exe
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.pdb

@@ -82,7 +82,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlfredoSauce.png" />
+    <Content Include="Bacon.png" />
+    <Content Include="BasicPizzaCrust.jpg" />
+    <Content Include="Cheese.png" />
+    <Content Include="DoublePepperoni.png" />
+    <Content Include="Ham.png" />
+    <Content Include="Mushrooms.png" />
+    <Content Include="Pepperoni.png" />
+    <Content Include="Sausage.png" />
     <Content Include="SpecialPizzas.txt" />
+    <Content Include="TomatoSauce.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

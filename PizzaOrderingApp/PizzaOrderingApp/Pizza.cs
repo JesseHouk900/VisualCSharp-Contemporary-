@@ -8,7 +8,7 @@ namespace PizzaOrderingApp
     public class Pizza
     {
         private string name;
-        private ArrayList toppings;
+        public ArrayList toppings;
         private decimal price;
         public string Name
         {
@@ -24,20 +24,21 @@ namespace PizzaOrderingApp
                 }
             }
         }
-        public ArrayList Toppings
-        {
-            get
-            {
-                return toppings;
-            }
-            set
-            {
-                if (!(value is null) && value[0].ToString() != "")
-                {
-                    toppings = value;
-                }
-            }
-        }
+
+        //public ArrayList Toppings
+        //{
+        //    get
+        //    {
+        //        return toppings;
+        //    }
+        //    set
+        //    {
+        //        if (!(value is null) && value.Count != 0 && value[0].ToString() != "")
+        //        {
+        //            toppings = value;
+        //        }
+        //    }
+        //}
 
         public string Crust
         {
@@ -105,7 +106,7 @@ namespace PizzaOrderingApp
             }
         }
         // used for custom pizzas
-        public Pizza ()
+        public Pizza()
         {
             name = "Custom";
             // adds default toppings to pizza, medium crust, tomato sauce, cheese
@@ -113,11 +114,28 @@ namespace PizzaOrderingApp
         }
 
         // used for speciality pizzas
-        public Pizza (string PizzaName)
+        public Pizza(string PizzaName)
         {
             name = PizzaName;
             // adds default toppings to pizza, medium crust, tomato sauce, cheese
             DefaultToppings();
+        }
+
+        // copy constructor
+        public Pizza(Pizza p2)
+        {
+            price = p2.Price;
+            if (toppings != null)
+            {
+                toppings.Clear();
+            }
+            toppings = new ArrayList(p2.toppings.Count);
+            for (int i = 0; i < p2.toppings.Count; i++)
+            {
+                toppings.Add(p2.toppings[i]);
+                //toppings[i] = new object();
+                //toppings[i] = p2.toppings[i];
+            }
         }
 
         // used for first making pizzas

@@ -38,9 +38,9 @@
             this.DELETE_LATER = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.SpecialityPizza_GroupBox = new System.Windows.Forms.GroupBox();
-            this.SmallPizza_radioButton = new System.Windows.Forms.RadioButton();
-            this.MediumPizza_radioButton = new System.Windows.Forms.RadioButton();
             this.LargePizza_radioButton = new System.Windows.Forms.RadioButton();
+            this.MediumPizza_radioButton = new System.Windows.Forms.RadioButton();
+            this.SmallPizza_radioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialityPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateYourOwnPictureBox)).BeginInit();
             this.SpecialityPizza_GroupBox.SuspendLayout();
@@ -49,11 +49,6 @@
             // SpecialityComboBox
             // 
             this.SpecialityComboBox.FormattingEnabled = true;
-            this.SpecialityComboBox.Items.AddRange(new object[] {
-            "None",
-            "Pepperoni Supreme",
-            "Meat Lover\'s",
-            "Veggie Supreme"});
             this.SpecialityComboBox.Location = new System.Drawing.Point(208, 38);
             this.SpecialityComboBox.Name = "SpecialityComboBox";
             this.SpecialityComboBox.Size = new System.Drawing.Size(121, 22);
@@ -91,7 +86,7 @@
             // SpecialityLabel
             // 
             this.SpecialityLabel.AutoSize = true;
-            this.SpecialityLabel.BackColor = System.Drawing.Color.Fuchsia;
+            this.SpecialityLabel.BackColor = System.Drawing.SystemColors.Window;
             this.SpecialityLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SpecialityLabel.Location = new System.Drawing.Point(127, 54);
             this.SpecialityLabel.Name = "SpecialityLabel";
@@ -150,16 +145,16 @@
             this.SpecialityPizza_GroupBox.TabIndex = 9;
             this.SpecialityPizza_GroupBox.TabStop = false;
             // 
-            // SmallPizza_radioButton
+            // LargePizza_radioButton
             // 
-            this.SmallPizza_radioButton.AutoSize = true;
-            this.SmallPizza_radioButton.Location = new System.Drawing.Point(208, 108);
-            this.SmallPizza_radioButton.Name = "SmallPizza_radioButton";
-            this.SmallPizza_radioButton.Size = new System.Drawing.Size(50, 18);
-            this.SmallPizza_radioButton.TabIndex = 9;
-            this.SmallPizza_radioButton.TabStop = true;
-            this.SmallPizza_radioButton.Text = "Small";
-            this.SmallPizza_radioButton.UseVisualStyleBackColor = true;
+            this.LargePizza_radioButton.AutoSize = true;
+            this.LargePizza_radioButton.Location = new System.Drawing.Point(208, 158);
+            this.LargePizza_radioButton.Name = "LargePizza_radioButton";
+            this.LargePizza_radioButton.Size = new System.Drawing.Size(51, 18);
+            this.LargePizza_radioButton.TabIndex = 11;
+            this.LargePizza_radioButton.TabStop = true;
+            this.LargePizza_radioButton.Text = "Large";
+            this.LargePizza_radioButton.UseVisualStyleBackColor = true;
             // 
             // MediumPizza_radioButton
             // 
@@ -172,16 +167,16 @@
             this.MediumPizza_radioButton.Text = "Medium";
             this.MediumPizza_radioButton.UseVisualStyleBackColor = true;
             // 
-            // LargePizza_radioButton
+            // SmallPizza_radioButton
             // 
-            this.LargePizza_radioButton.AutoSize = true;
-            this.LargePizza_radioButton.Location = new System.Drawing.Point(208, 158);
-            this.LargePizza_radioButton.Name = "LargePizza_radioButton";
-            this.LargePizza_radioButton.Size = new System.Drawing.Size(51, 18);
-            this.LargePizza_radioButton.TabIndex = 11;
-            this.LargePizza_radioButton.TabStop = true;
-            this.LargePizza_radioButton.Text = "Large";
-            this.LargePizza_radioButton.UseVisualStyleBackColor = true;
+            this.SmallPizza_radioButton.AutoSize = true;
+            this.SmallPizza_radioButton.Location = new System.Drawing.Point(208, 108);
+            this.SmallPizza_radioButton.Name = "SmallPizza_radioButton";
+            this.SmallPizza_radioButton.Size = new System.Drawing.Size(50, 18);
+            this.SmallPizza_radioButton.TabIndex = 9;
+            this.SmallPizza_radioButton.TabStop = true;
+            this.SmallPizza_radioButton.Text = "Small";
+            this.SmallPizza_radioButton.UseVisualStyleBackColor = true;
             // 
             // MenuForm
             // 
