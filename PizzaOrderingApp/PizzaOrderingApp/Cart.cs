@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * Class for the cart that will hold the pizzas being ordered
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,17 +27,13 @@ namespace PizzaOrderingApp
                 }
             }
         }
-
+        // return the sum of the prices of the pizzas in the cart
         public decimal GetTotal()
         {
             decimal total = 0m;
             for (int i = 0; i < PizzaList.Count; i++)
             {
                 total += PizzaList[i].Price;
-                if (PizzaList[i].Name == "Custom")
-                {
-                    total += PizzaList[i].BasePrice;
-                }
             }
             return total;
         }

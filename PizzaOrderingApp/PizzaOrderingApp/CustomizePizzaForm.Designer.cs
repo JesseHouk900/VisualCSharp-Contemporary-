@@ -91,10 +91,10 @@
             this.FULL_Cheese_PictureBox = new System.Windows.Forms.PictureBox();
             this.LEFT_Cheese_PictureBox = new System.Windows.Forms.PictureBox();
             this.RIGHT_Cheese_PictureBox = new System.Windows.Forms.PictureBox();
-            this.CustomPizza_PictureBox = new System.Windows.Forms.PictureBox();
             this.AddCustomPizza_Button = new System.Windows.Forms.Button();
             this.PizzaPrice_Label = new System.Windows.Forms.Label();
             this.Toppings_Label = new System.Windows.Forms.Label();
+            this.Back_Button = new System.Windows.Forms.Button();
             this.Size_GroupBox.SuspendLayout();
             this.Sauce_GroupBox.SuspendLayout();
             this.Toppings_GroupBox.SuspendLayout();
@@ -139,7 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.FULL_Cheese_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LEFT_Cheese_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RIGHT_Cheese_PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomPizza_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Size_GroupBox
@@ -806,14 +805,6 @@
             this.RIGHT_Cheese_PictureBox.TabIndex = 38;
             this.RIGHT_Cheese_PictureBox.TabStop = false;
             // 
-            // CustomPizza_PictureBox
-            // 
-            this.CustomPizza_PictureBox.Location = new System.Drawing.Point(26, 36);
-            this.CustomPizza_PictureBox.Name = "CustomPizza_PictureBox";
-            this.CustomPizza_PictureBox.Size = new System.Drawing.Size(200, 200);
-            this.CustomPizza_PictureBox.TabIndex = 0;
-            this.CustomPizza_PictureBox.TabStop = false;
-            // 
             // AddCustomPizza_Button
             // 
             this.AddCustomPizza_Button.Location = new System.Drawing.Point(485, 373);
@@ -841,11 +832,22 @@
             this.Toppings_Label.TabIndex = 9;
             this.Toppings_Label.Text = "Topping prices listed are for full portions. Half orders are half price.";
             // 
+            // Back_Button
+            // 
+            this.Back_Button.Location = new System.Drawing.Point(26, 36);
+            this.Back_Button.Name = "Back_Button";
+            this.Back_Button.Size = new System.Drawing.Size(75, 23);
+            this.Back_Button.TabIndex = 10;
+            this.Back_Button.Text = "Back";
+            this.Back_Button.UseVisualStyleBackColor = true;
+            this.Back_Button.Click += new System.EventHandler(this.Back_Button_Click);
+            // 
             // CustomizePizzaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 444);
+            this.Controls.Add(this.Back_Button);
             this.Controls.Add(this.Toppings_Label);
             this.Controls.Add(this.PizzaPrice_Label);
             this.Controls.Add(this.AddCustomPizza_Button);
@@ -853,7 +855,6 @@
             this.Controls.Add(this.Toppings_GroupBox);
             this.Controls.Add(this.Sauce_GroupBox);
             this.Controls.Add(this.Size_GroupBox);
-            this.Controls.Add(this.CustomPizza_PictureBox);
             this.Name = "CustomizePizzaForm";
             this.Text = "CustomizePizzaForm";
             this.Size_GroupBox.ResumeLayout(false);
@@ -906,15 +907,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.FULL_Cheese_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LEFT_Cheese_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RIGHT_Cheese_PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomPizza_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox CustomPizza_PictureBox;
         private System.Windows.Forms.GroupBox Size_GroupBox;
         private System.Windows.Forms.GroupBox Sauce_GroupBox;
         private System.Windows.Forms.GroupBox Toppings_GroupBox;
@@ -980,5 +978,6 @@
         private System.Windows.Forms.Button AddCustomPizza_Button;
         private System.Windows.Forms.Label PizzaPrice_Label;
         private System.Windows.Forms.Label Toppings_Label;
+        private System.Windows.Forms.Button Back_Button;
     }
 }

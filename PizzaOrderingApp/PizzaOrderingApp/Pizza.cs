@@ -111,6 +111,7 @@ namespace PizzaOrderingApp
             price = p2.Price;
             basePrice = p2.BasePrice;
             coreComponent = new string [2];
+            name = p2.Name;
             for (int i = 0; i < 2; i++)
             {
                 coreComponent[i] = p2.coreComponent[i];
@@ -150,11 +151,11 @@ namespace PizzaOrderingApp
             decimal price = BasePrice;
             for (int i = 0; i < lSize; i++)
             {
-                price += CustomizePizzaForm.Toppings[LeftToppings[i]];
+                price += MenuForm.Toppings[LeftToppings[i]];
             }
             for (int i = 0; i < rSize; i++)
             {
-                price += CustomizePizzaForm.Toppings[RightToppings[i]];
+                price += MenuForm.Toppings[RightToppings[i]];
             }
             return price;
         }

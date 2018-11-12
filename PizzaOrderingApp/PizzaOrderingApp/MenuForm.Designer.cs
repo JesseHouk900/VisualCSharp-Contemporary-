@@ -28,176 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SpecialityComboBox = new System.Windows.Forms.ComboBox();
-            this.CreateYourOwnButton = new System.Windows.Forms.Button();
-            this.CompanyLabel = new System.Windows.Forms.Label();
-            this.SpecialityDescriptionLabel = new System.Windows.Forms.Label();
-            this.SpecialityLabel = new System.Windows.Forms.Label();
-            this.SpecialityPictureBox = new System.Windows.Forms.PictureBox();
-            this.CreateYourOwnPictureBox = new System.Windows.Forms.PictureBox();
-            this.DELETE_LATER = new System.Windows.Forms.Label();
-            this.AddButton = new System.Windows.Forms.Button();
+            this.Speciality_ComboBox = new System.Windows.Forms.ComboBox();
+            this.CreateYourOwn_Button = new System.Windows.Forms.Button();
+            this.Company_Label = new System.Windows.Forms.Label();
+            this.SpecialityDescription_Label = new System.Windows.Forms.Label();
+            this.Speciality_Label = new System.Windows.Forms.Label();
+            this.Add_Button = new System.Windows.Forms.Button();
             this.SpecialityPizza_GroupBox = new System.Windows.Forms.GroupBox();
-            this.PersonalPizza_radioButton = new System.Windows.Forms.RadioButton();
-            this.LargePizza_radioButton = new System.Windows.Forms.RadioButton();
-            this.MediumPizza_radioButton = new System.Windows.Forms.RadioButton();
-            this.SmallPizza_radioButton = new System.Windows.Forms.RadioButton();
+            this.SIZE_Personal_radioButton = new System.Windows.Forms.RadioButton();
+            this.SIZE_Large_radioButton = new System.Windows.Forms.RadioButton();
+            this.SIZE_Medium_radioButton = new System.Windows.Forms.RadioButton();
+            this.SIZE_Small_radioButton = new System.Windows.Forms.RadioButton();
             this.Checkout_Label = new System.Windows.Forms.Label();
             this.Checkout_Button = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.SpecialityPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreateYourOwnPictureBox)).BeginInit();
+            this.SpecialityPizzaCost_Label = new System.Windows.Forms.Label();
             this.SpecialityPizza_GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SpecialityComboBox
+            // Speciality_ComboBox
             // 
-            this.SpecialityComboBox.FormattingEnabled = true;
-            this.SpecialityComboBox.Location = new System.Drawing.Point(208, 38);
-            this.SpecialityComboBox.Name = "SpecialityComboBox";
-            this.SpecialityComboBox.Size = new System.Drawing.Size(121, 22);
-            this.SpecialityComboBox.TabIndex = 0;
-            this.SpecialityComboBox.SelectedIndexChanged += new System.EventHandler(this.SpecialityComboBox_SelectedIndexChanged);
+            this.Speciality_ComboBox.FormattingEnabled = true;
+            this.Speciality_ComboBox.Location = new System.Drawing.Point(21, 39);
+            this.Speciality_ComboBox.Name = "Speciality_ComboBox";
+            this.Speciality_ComboBox.Size = new System.Drawing.Size(121, 22);
+            this.Speciality_ComboBox.TabIndex = 0;
+            this.Speciality_ComboBox.SelectedIndexChanged += new System.EventHandler(this.SpecialityComboBox_SelectedIndexChanged);
             // 
-            // CreateYourOwnButton
+            // CreateYourOwn_Button
             // 
-            this.CreateYourOwnButton.Location = new System.Drawing.Point(466, 53);
-            this.CreateYourOwnButton.Name = "CreateYourOwnButton";
-            this.CreateYourOwnButton.Size = new System.Drawing.Size(116, 25);
-            this.CreateYourOwnButton.TabIndex = 1;
-            this.CreateYourOwnButton.Text = "Create Your Own Pizza";
-            this.CreateYourOwnButton.UseVisualStyleBackColor = true;
-            this.CreateYourOwnButton.Click += new System.EventHandler(this.CreateYourOwnButton_Click);
+            this.CreateYourOwn_Button.Location = new System.Drawing.Point(390, 54);
+            this.CreateYourOwn_Button.Name = "CreateYourOwn_Button";
+            this.CreateYourOwn_Button.Size = new System.Drawing.Size(116, 25);
+            this.CreateYourOwn_Button.TabIndex = 1;
+            this.CreateYourOwn_Button.Text = "Create Your Own Pizza";
+            this.CreateYourOwn_Button.UseVisualStyleBackColor = true;
+            this.CreateYourOwn_Button.Click += new System.EventHandler(this.CreateYourOwnButton_Click);
             // 
-            // CompanyLabel
+            // Company_Label
             // 
-            this.CompanyLabel.AutoSize = true;
-            this.CompanyLabel.Font = new System.Drawing.Font("Lucida Handwriting", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompanyLabel.Location = new System.Drawing.Point(262, 10);
-            this.CompanyLabel.Name = "CompanyLabel";
-            this.CompanyLabel.Size = new System.Drawing.Size(263, 41);
-            this.CompanyLabel.TabIndex = 2;
-            this.CompanyLabel.Text = "Pizza Pizzaz";
+            this.Company_Label.AutoSize = true;
+            this.Company_Label.Font = new System.Drawing.Font("Lucida Handwriting", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Company_Label.Location = new System.Drawing.Point(182, 10);
+            this.Company_Label.Name = "Company_Label";
+            this.Company_Label.Size = new System.Drawing.Size(263, 41);
+            this.Company_Label.TabIndex = 2;
+            this.Company_Label.Text = "Pizza Pizzaz";
             // 
-            // SpecialityDescriptionLabel
+            // SpecialityDescription_Label
             // 
-            this.SpecialityDescriptionLabel.AutoSize = true;
-            this.SpecialityDescriptionLabel.Location = new System.Drawing.Point(188, 64);
-            this.SpecialityDescriptionLabel.Name = "SpecialityDescriptionLabel";
-            this.SpecialityDescriptionLabel.Size = new System.Drawing.Size(58, 14);
-            this.SpecialityDescriptionLabel.TabIndex = 3;
-            this.SpecialityDescriptionLabel.Text = "It\'s-a Pizza";
+            this.SpecialityDescription_Label.AutoSize = true;
+            this.SpecialityDescription_Label.Location = new System.Drawing.Point(18, 64);
+            this.SpecialityDescription_Label.Name = "SpecialityDescription_Label";
+            this.SpecialityDescription_Label.Size = new System.Drawing.Size(58, 14);
+            this.SpecialityDescription_Label.TabIndex = 3;
+            this.SpecialityDescription_Label.Text = "It\'s-a Pizza";
             // 
-            // SpecialityLabel
+            // Speciality_Label
             // 
-            this.SpecialityLabel.AutoSize = true;
-            this.SpecialityLabel.BackColor = System.Drawing.SystemColors.Window;
-            this.SpecialityLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SpecialityLabel.Location = new System.Drawing.Point(127, 54);
-            this.SpecialityLabel.Name = "SpecialityLabel";
-            this.SpecialityLabel.Size = new System.Drawing.Size(108, 19);
-            this.SpecialityLabel.TabIndex = 4;
-            this.SpecialityLabel.Text = "Speciality Pizzas";
+            this.Speciality_Label.AutoSize = true;
+            this.Speciality_Label.BackColor = System.Drawing.SystemColors.Window;
+            this.Speciality_Label.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Speciality_Label.Location = new System.Drawing.Point(45, 16);
+            this.Speciality_Label.Name = "Speciality_Label";
+            this.Speciality_Label.Size = new System.Drawing.Size(108, 19);
+            this.Speciality_Label.TabIndex = 4;
+            this.Speciality_Label.Text = "Speciality Pizzas";
             // 
-            // SpecialityPictureBox
+            // Add_Button
             // 
-            this.SpecialityPictureBox.Location = new System.Drawing.Point(0, 43);
-            this.SpecialityPictureBox.Name = "SpecialityPictureBox";
-            this.SpecialityPictureBox.Size = new System.Drawing.Size(180, 180);
-            this.SpecialityPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.SpecialityPictureBox.TabIndex = 5;
-            this.SpecialityPictureBox.TabStop = false;
-            // 
-            // CreateYourOwnPictureBox
-            // 
-            this.CreateYourOwnPictureBox.Location = new System.Drawing.Point(466, 98);
-            this.CreateYourOwnPictureBox.Name = "CreateYourOwnPictureBox";
-            this.CreateYourOwnPictureBox.Size = new System.Drawing.Size(174, 179);
-            this.CreateYourOwnPictureBox.TabIndex = 6;
-            this.CreateYourOwnPictureBox.TabStop = false;
-            // 
-            // DELETE_LATER
-            // 
-            this.DELETE_LATER.AutoSize = true;
-            this.DELETE_LATER.Location = new System.Drawing.Point(484, 138);
-            this.DELETE_LATER.Name = "DELETE_LATER";
-            this.DELETE_LATER.Size = new System.Drawing.Size(156, 14);
-            this.DELETE_LATER.TabIndex = 7;
-            this.DELETE_LATER.Text = "Pizza with a question mark on it";
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(227, 240);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 8;
-            this.AddButton.Text = "Add to Cart";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            this.Add_Button.Location = new System.Drawing.Point(21, 221);
+            this.Add_Button.Name = "Add_Button";
+            this.Add_Button.Size = new System.Drawing.Size(75, 23);
+            this.Add_Button.TabIndex = 8;
+            this.Add_Button.Text = "Add to Cart";
+            this.Add_Button.UseVisualStyleBackColor = true;
+            this.Add_Button.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // SpecialityPizza_GroupBox
             // 
-            this.SpecialityPizza_GroupBox.Controls.Add(this.PersonalPizza_radioButton);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.LargePizza_radioButton);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.MediumPizza_radioButton);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.SmallPizza_radioButton);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.AddButton);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.SpecialityComboBox);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.SpecialityPictureBox);
-            this.SpecialityPizza_GroupBox.Controls.Add(this.SpecialityDescriptionLabel);
-            this.SpecialityPizza_GroupBox.Location = new System.Drawing.Point(22, 54);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.SpecialityPizzaCost_Label);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.SIZE_Personal_radioButton);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.SIZE_Large_radioButton);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.Speciality_Label);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.SIZE_Medium_radioButton);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.SIZE_Small_radioButton);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.Add_Button);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.Speciality_ComboBox);
+            this.SpecialityPizza_GroupBox.Controls.Add(this.SpecialityDescription_Label);
+            this.SpecialityPizza_GroupBox.Location = new System.Drawing.Point(76, 54);
             this.SpecialityPizza_GroupBox.Name = "SpecialityPizza_GroupBox";
-            this.SpecialityPizza_GroupBox.Size = new System.Drawing.Size(344, 278);
+            this.SpecialityPizza_GroupBox.Size = new System.Drawing.Size(232, 278);
             this.SpecialityPizza_GroupBox.TabIndex = 9;
             this.SpecialityPizza_GroupBox.TabStop = false;
             // 
-            // PersonalPizza_radioButton
+            // SIZE_Personal_radioButton
             // 
-            this.PersonalPizza_radioButton.AutoSize = true;
-            this.PersonalPizza_radioButton.Location = new System.Drawing.Point(208, 102);
-            this.PersonalPizza_radioButton.Name = "PersonalPizza_radioButton";
-            this.PersonalPizza_radioButton.Size = new System.Drawing.Size(65, 18);
-            this.PersonalPizza_radioButton.TabIndex = 12;
-            this.PersonalPizza_radioButton.TabStop = true;
-            this.PersonalPizza_radioButton.Text = "Personal";
-            this.PersonalPizza_radioButton.UseVisualStyleBackColor = true;
+            this.SIZE_Personal_radioButton.AutoSize = true;
+            this.SIZE_Personal_radioButton.Location = new System.Drawing.Point(21, 94);
+            this.SIZE_Personal_radioButton.Name = "SIZE_Personal_radioButton";
+            this.SIZE_Personal_radioButton.Size = new System.Drawing.Size(65, 18);
+            this.SIZE_Personal_radioButton.TabIndex = 12;
+            this.SIZE_Personal_radioButton.TabStop = true;
+            this.SIZE_Personal_radioButton.Text = "Personal";
+            this.SIZE_Personal_radioButton.UseVisualStyleBackColor = true;
             // 
-            // LargePizza_radioButton
+            // SIZE_Large_radioButton
             // 
-            this.LargePizza_radioButton.AutoSize = true;
-            this.LargePizza_radioButton.Location = new System.Drawing.Point(208, 173);
-            this.LargePizza_radioButton.Name = "LargePizza_radioButton";
-            this.LargePizza_radioButton.Size = new System.Drawing.Size(51, 18);
-            this.LargePizza_radioButton.TabIndex = 11;
-            this.LargePizza_radioButton.TabStop = true;
-            this.LargePizza_radioButton.Text = "Large";
-            this.LargePizza_radioButton.UseVisualStyleBackColor = true;
+            this.SIZE_Large_radioButton.AutoSize = true;
+            this.SIZE_Large_radioButton.Location = new System.Drawing.Point(21, 165);
+            this.SIZE_Large_radioButton.Name = "SIZE_Large_radioButton";
+            this.SIZE_Large_radioButton.Size = new System.Drawing.Size(51, 18);
+            this.SIZE_Large_radioButton.TabIndex = 11;
+            this.SIZE_Large_radioButton.TabStop = true;
+            this.SIZE_Large_radioButton.Text = "Large";
+            this.SIZE_Large_radioButton.UseVisualStyleBackColor = true;
             // 
-            // MediumPizza_radioButton
+            // SIZE_Medium_radioButton
             // 
-            this.MediumPizza_radioButton.AutoSize = true;
-            this.MediumPizza_radioButton.Location = new System.Drawing.Point(208, 149);
-            this.MediumPizza_radioButton.Name = "MediumPizza_radioButton";
-            this.MediumPizza_radioButton.Size = new System.Drawing.Size(62, 18);
-            this.MediumPizza_radioButton.TabIndex = 10;
-            this.MediumPizza_radioButton.TabStop = true;
-            this.MediumPizza_radioButton.Text = "Medium";
-            this.MediumPizza_radioButton.UseVisualStyleBackColor = true;
+            this.SIZE_Medium_radioButton.AutoSize = true;
+            this.SIZE_Medium_radioButton.Location = new System.Drawing.Point(21, 141);
+            this.SIZE_Medium_radioButton.Name = "SIZE_Medium_radioButton";
+            this.SIZE_Medium_radioButton.Size = new System.Drawing.Size(62, 18);
+            this.SIZE_Medium_radioButton.TabIndex = 10;
+            this.SIZE_Medium_radioButton.TabStop = true;
+            this.SIZE_Medium_radioButton.Text = "Medium";
+            this.SIZE_Medium_radioButton.UseVisualStyleBackColor = true;
             // 
-            // SmallPizza_radioButton
+            // SIZE_Small_radioButton
             // 
-            this.SmallPizza_radioButton.AutoSize = true;
-            this.SmallPizza_radioButton.Location = new System.Drawing.Point(208, 125);
-            this.SmallPizza_radioButton.Name = "SmallPizza_radioButton";
-            this.SmallPizza_radioButton.Size = new System.Drawing.Size(50, 18);
-            this.SmallPizza_radioButton.TabIndex = 9;
-            this.SmallPizza_radioButton.TabStop = true;
-            this.SmallPizza_radioButton.Text = "Small";
-            this.SmallPizza_radioButton.UseVisualStyleBackColor = true;
+            this.SIZE_Small_radioButton.AutoSize = true;
+            this.SIZE_Small_radioButton.Location = new System.Drawing.Point(21, 117);
+            this.SIZE_Small_radioButton.Name = "SIZE_Small_radioButton";
+            this.SIZE_Small_radioButton.Size = new System.Drawing.Size(50, 18);
+            this.SIZE_Small_radioButton.TabIndex = 9;
+            this.SIZE_Small_radioButton.TabStop = true;
+            this.SIZE_Small_radioButton.Text = "Small";
+            this.SIZE_Small_radioButton.UseVisualStyleBackColor = true;
             // 
             // Checkout_Label
             // 
             this.Checkout_Label.AutoSize = true;
-            this.Checkout_Label.Location = new System.Drawing.Point(396, 303);
+            this.Checkout_Label.Location = new System.Drawing.Point(376, 249);
             this.Checkout_Label.Name = "Checkout_Label";
             this.Checkout_Label.Size = new System.Drawing.Size(139, 14);
             this.Checkout_Label.TabIndex = 10;
@@ -205,7 +176,7 @@
             // 
             // Checkout_Button
             // 
-            this.Checkout_Button.Location = new System.Drawing.Point(565, 299);
+            this.Checkout_Button.Location = new System.Drawing.Point(411, 298);
             this.Checkout_Button.Name = "Checkout_Button";
             this.Checkout_Button.Size = new System.Drawing.Size(75, 23);
             this.Checkout_Button.TabIndex = 11;
@@ -213,25 +184,29 @@
             this.Checkout_Button.UseVisualStyleBackColor = true;
             this.Checkout_Button.Click += new System.EventHandler(this.Checkout_Button_Click);
             // 
+            // SpecialityPizzaCost_Label
+            // 
+            this.SpecialityPizzaCost_Label.AutoSize = true;
+            this.SpecialityPizzaCost_Label.Location = new System.Drawing.Point(18, 195);
+            this.SpecialityPizzaCost_Label.Name = "SpecialityPizzaCost_Label";
+            this.SpecialityPizzaCost_Label.Size = new System.Drawing.Size(34, 14);
+            this.SpecialityPizzaCost_Label.TabIndex = 13;
+            this.SpecialityPizzaCost_Label.Text = "$0.00";
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(673, 485);
             this.Controls.Add(this.Checkout_Button);
             this.Controls.Add(this.Checkout_Label);
-            this.Controls.Add(this.SpecialityLabel);
             this.Controls.Add(this.SpecialityPizza_GroupBox);
-            this.Controls.Add(this.DELETE_LATER);
-            this.Controls.Add(this.CreateYourOwnPictureBox);
-            this.Controls.Add(this.CompanyLabel);
-            this.Controls.Add(this.CreateYourOwnButton);
+            this.Controls.Add(this.Company_Label);
+            this.Controls.Add(this.CreateYourOwn_Button);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MenuForm";
             this.Text = "Pizza Pizzaz - Pizza Ordering Service";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            ((System.ComponentModel.ISupportInitialize)(this.SpecialityPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CreateYourOwnPictureBox)).EndInit();
             this.SpecialityPizza_GroupBox.ResumeLayout(false);
             this.SpecialityPizza_GroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -241,22 +216,20 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox SpecialityComboBox;
-        private System.Windows.Forms.Button CreateYourOwnButton;
-        private System.Windows.Forms.Label CompanyLabel;
-        private System.Windows.Forms.Label SpecialityDescriptionLabel;
-        private System.Windows.Forms.Label SpecialityLabel;
-        private System.Windows.Forms.PictureBox SpecialityPictureBox;
-        private System.Windows.Forms.PictureBox CreateYourOwnPictureBox;
-        private System.Windows.Forms.Label DELETE_LATER;
-        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.ComboBox Speciality_ComboBox;
+        private System.Windows.Forms.Button CreateYourOwn_Button;
+        private System.Windows.Forms.Label Company_Label;
+        private System.Windows.Forms.Label SpecialityDescription_Label;
+        private System.Windows.Forms.Label Speciality_Label;
+        private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.GroupBox SpecialityPizza_GroupBox;
-        private System.Windows.Forms.RadioButton LargePizza_radioButton;
-        private System.Windows.Forms.RadioButton MediumPizza_radioButton;
-        private System.Windows.Forms.RadioButton SmallPizza_radioButton;
-        private System.Windows.Forms.RadioButton PersonalPizza_radioButton;
+        private System.Windows.Forms.RadioButton SIZE_Large_radioButton;
+        private System.Windows.Forms.RadioButton SIZE_Medium_radioButton;
+        private System.Windows.Forms.RadioButton SIZE_Small_radioButton;
+        private System.Windows.Forms.RadioButton SIZE_Personal_radioButton;
         private System.Windows.Forms.Label Checkout_Label;
         private System.Windows.Forms.Button Checkout_Button;
+        private System.Windows.Forms.Label SpecialityPizzaCost_Label;
     }
 }
 
