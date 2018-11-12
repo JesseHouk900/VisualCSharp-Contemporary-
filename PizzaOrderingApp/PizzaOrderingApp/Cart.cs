@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +8,9 @@ namespace PizzaOrderingApp
 {
     public class Cart
     {
-        private ArrayList pizzas;
+        private List<Pizza> pizzas;
 
-        public ArrayList PizzaList
+        public List<Pizza> PizzaList
         {
             get
             {
@@ -23,6 +23,20 @@ namespace PizzaOrderingApp
                     pizzas = value;
                 }
             }
+        }
+
+        public decimal GetTotal()
+        {
+            decimal total = 0m;
+            for (int i = 0; i < PizzaList.Count; i++)
+            {
+                total += PizzaList[i].Price;
+                if (PizzaList[i].Name == "Custom")
+                {
+                    total += PizzaList[i].BasePrice;
+                }
+            }
+            return total;
         }
     }
 }

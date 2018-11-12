@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cart.cs" />
+    <Compile Include="CartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CartForm.Designer.cs">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizePizzaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomizePizzaForm.Designer.cs">
+      <DependentUpon>CustomizePizzaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +68,12 @@
     <Compile Include="Pizza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CartForm.resx">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizePizzaForm.resx">
+      <DependentUpon>CustomizePizzaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -67,6 +85,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -82,17 +101,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AlfredoSauce.png" />
-    <Content Include="Bacon.png" />
-    <Content Include="BasicPizzaCrust.jpg" />
-    <Content Include="Cheese.png" />
-    <Content Include="DoublePepperoni.png" />
-    <Content Include="Ham.png" />
-    <Content Include="Mushrooms.png" />
-    <Content Include="Pepperoni.png" />
-    <Content Include="Sausage.png" />
-    <Content Include="SpecialPizzas.txt" />
-    <Content Include="TomatoSauce.png" />
+    <Content Include="bin\Debug\SpecialPizzas.txt" />
+    <None Include="bin\Debug\Images\Checked_FullPizza.jpg" />
+    <None Include="bin\Debug\Images\Checked_LeftSidePizza.jpg" />
+    <None Include="bin\Debug\Images\Checked_RightSidePizza.jpg" />
+    <Content Include="bin\Debug\Images\Unchecked_FullPizza.jpg" />
+    <Content Include="bin\Debug\Images\Unchecked_LeftSidePizza.jpg" />
+    <Content Include="bin\Debug\Images\Unchecked_RightSidePizza.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

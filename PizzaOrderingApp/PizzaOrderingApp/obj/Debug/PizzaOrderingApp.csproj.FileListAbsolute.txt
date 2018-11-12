@@ -8,3 +8,5 @@ C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\Piz
 C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.exe
 C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.pdb
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.CustomizePizzaForm.resources
+C:\Users\Alex\Documents\Jesse\CS\VisualCSharp-Contemporary-\PizzaOrderingApp\PizzaOrderingApp\obj\Debug\PizzaOrderingApp.CartForm.resources

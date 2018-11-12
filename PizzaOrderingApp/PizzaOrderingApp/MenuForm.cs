@@ -1,4 +1,5 @@
-﻿using System;
+﻿// pizza pizzaz: Prompt Pizzas
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,23 +18,26 @@ namespace PizzaOrderingApp
         static public Cart myCart;
         readonly private IReadOnlyCollection<Pizza> PizzaSpecials;
         readonly private IReadOnlyDictionary<string, int> SpecialPizzaNum;
+        readonly private IReadOnlyCollection<string> SpecialPizzaPictureNames;
         public Pizza CurrentSpecialPizza;
-        public PictureBox[] CurrentSpecialPizzaPictureBoxes;
-        public IReadOnlyDictionary<string, string> Ingredients;
         public MenuForm()
         {
             InitializeComponent();
             MouseEvents();
-            myCart = new Cart();
-            Ingredients = LoadPizzaIngredients();
+            if (myCart == null)
+            {
+                myCart = new Cart();
+                myCart.PizzaList = new List<Pizza>();
+            }
+            Checkout_Label.Text = "Your current total is: $" + myCart.GetTotal();
             ArrayList pizzaInfo = LoadSpecials();
             if (pizzaInfo != null)
             {
                 PizzaSpecials = (IReadOnlyCollection<Pizza>)pizzaInfo[0];
                 SpecialPizzaNum = (IReadOnlyDictionary<string, int>)pizzaInfo[1];
-                CurrentSpecialPizza = new Pizza();
-
+                SpecialPizzaPictureNames = (IReadOnlyCollection<string>)pizzaInfo[2];
             }
+            CurrentSpecialPizza = new Pizza();
             SpecialityComboBox.Items.Add("None");
             for (int i = 0; i < PizzaSpecials.Count(); i++)
             {
@@ -47,49 +51,33 @@ namespace PizzaOrderingApp
             SmallPizza_radioButton.MouseDown += new MouseEventHandler(SpecialityPizzaSize_CheckChanged);
             MediumPizza_radioButton.MouseDown += new MouseEventHandler(SpecialityPizzaSize_CheckChanged);
             LargePizza_radioButton.MouseDown += new MouseEventHandler(SpecialityPizzaSize_CheckChanged);
-
         }
 
         static public ArrayList LoadSpecials()
         {
             List<Pizza> specialPizzas = new List<Pizza>();
             Dictionary<string, int> pizzaNums = new Dictionary<string, int>();
+            List<string> pizzaPicturePaths = new List<string>();
             try
             {
                 string line;
                 int i = -1;
-
                 // reading from input file that should look like 
                 // Pizza Name Goes Here
                 // $10
-                // -Topping Name Goes Here
-                // -Notice the absence of
-                // -A space at the beginning
-                // -Of the line
                 // Specialty Pizza 2
                 // $20.34
-                // -The goods
                 //
                 // Below is a figure of the pizzas read in from the sample data above
-                //
-                //  Toppings   Pizza ->     Pizza Name Goes Here    |    Speciality Pizza 2
-                //      |              ----------------------------------------------------------
-                //      V                  Topping Name Goes Here   |         The goods
-                //                          Notice the absence of   |
-                //                        A space at the beginning  |
-                //                               Of the line        |
-                //
-                // Price ->                            10                       20.34
-                // NOTE: Using "The goods" as a topping input does not register as specific toppings.
-                //      It just adds "The goods" as an individual topping.
+                //        Pizza Name ->               1                           2
+                //             Pizza ->     Pizza Name Goes Here    |    Speciality Pizza 2
+                //                     ----------------------------------------------------------
+                //             Price ->              10             |           20.34
                 StreamReader fin = new StreamReader(new FileStream(Directory.GetCurrentDirectory() + "\\SpecialPizzas.txt", FileMode.Open));
                 while ((line = fin.ReadLine()) != null)
                 {
                     switch (line[0])
                     {
-                        case '-':
-                            specialPizzas[i].toppings.Add(line.Split('-')[1]);
-                            break;
                         case '$':
                             specialPizzas[i].Price = decimal.Parse(line.Split('$')[1]);
                             break;
@@ -97,12 +85,14 @@ namespace PizzaOrderingApp
                             i++;
                             specialPizzas.Add(new Pizza(line));
                             pizzaNums[line] = i;
+                            specialPizzas[i].Name = line;
                             break;
                     }
-                    
                 }
-                return new ArrayList(2) {specialPizzas.AsReadOnly(), (IReadOnlyDictionary<string, int>)pizzaNums };
-
+                fin.Close();
+                return new ArrayList(3) { specialPizzas.AsReadOnly(),
+                    (IReadOnlyDictionary<string, int>)pizzaNums,
+                    pizzaPicturePaths.AsReadOnly() };
             }
             catch (FileNotFoundException)
             {
@@ -111,50 +101,48 @@ namespace PizzaOrderingApp
                 {
                     case DialogResult.Retry:
                         return LoadSpecials();
-                        
                     case DialogResult.Cancel:
                         return new ArrayList();
-                        
                     default:
                         return new ArrayList();
                 }
-
             }
-
         }
 
         public void SpecialityPizzaSize_CheckChanged(object sender, MouseEventArgs e)
         {
-            switch (((RadioButton)sender).Text) {
+            switch (((RadioButton)sender).Text)
+            {
+                case "Personal":
+                    CurrentSpecialPizza.Crust = "Personal";
+                    SpecialityPictureBox.Image = ResizeImage(Image.FromFile(CurrentSpecialPizza.Name + ".jpg"), new Size(120, 120));
+                    break;
                 case "Small":
                     CurrentSpecialPizza.Crust = "Small";
-                    SpecialityPictureBox.Image = resizeImage(Image.FromFile("BasicPizzaCrust.jpg"), new Size(140, 140));
-                    //SpecialityPictureBox.Image = Image.FromFile("\\Images\\Small.jpg");
+                    SpecialityPictureBox.Image = ResizeImage(Image.FromFile(CurrentSpecialPizza.Name + ".jpg"), new Size(140, 140));
                     break;
                 case "Medium":
                     CurrentSpecialPizza.Crust = "Medium";
-                    SpecialityPictureBox.Image = resizeImage(Image.FromFile("BasicPizzaCrust.jpg"), new Size(160, 160));
-                    //SpecialityPictureBox.Image = Image.FromFile("\\Images\\Medium.jpg");
+                    SpecialityPictureBox.Image = ResizeImage(Image.FromFile(CurrentSpecialPizza.Name + ".jpg"), new Size(160, 160));
                     break;
                 case "Large":
                     CurrentSpecialPizza.Crust = "Large";
-                    SpecialityPictureBox.Image = resizeImage(Image.FromFile("BasicPizzaCrust.jpg"), new Size(180, 180));
-                    //SpecialityPictureBox.Image = Image.FromFile("\\Images\\Large.jpg");
+                    SpecialityPictureBox.Image = ResizeImage(Image.FromFile(CurrentSpecialPizza.Name + ".jpg"), new Size(180, 180));
                     break;
-
             }
-
         }
         private void AddButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to add a " + SpecialityComboBox.SelectedItem + " pizza to your order?", "Confirm Pizza Addition", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to add a " + CurrentSpecialPizza.Name + " pizza to your order?", "Confirm Pizza Addition", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             switch (result)
             {
                 case DialogResult.Yes:
-                    myCart.PizzaList.Add(SpecialityComboBox.SelectedItem);
+                    myCart.PizzaList.Add(new Pizza(CurrentSpecialPizza));
+                    Checkout_Label.Text = "Your current total is: $" + myCart.GetTotal();
                     break;
                 case DialogResult.No:
                     SpecialityComboBox.SelectedIndex = 0;
+                    MediumPizza_radioButton.Checked = true;
                     break;
             }
         }
@@ -163,105 +151,40 @@ namespace PizzaOrderingApp
         {
             int selectedPizzaIndex = SpecialPizzaNum[(string)((ComboBox)sender).SelectedItem];
             Pizza special = new Pizza(PizzaSpecials.ElementAt(selectedPizzaIndex));
-            int numPizzaToppings = special.toppings.Count;
-            CurrentSpecialPizzaPictureBoxes = new PictureBox[numPizzaToppings];
-
-
-            for (int i = 3; i < numPizzaToppings; i++)
+            int numPizzaToppings = special.LeftToppings.Count;
+            CurrentSpecialPizza.LeftToppings = new List<string>();
+            for (int i = 0; i < numPizzaToppings; i++)
             {
-                CurrentSpecialPizza.toppings.Add(special.toppings[i]);
+                CurrentSpecialPizza.LeftToppings.Add(special.LeftToppings[i]);
             }
-            //LoadSpecialityPizza();
-
-            //SpecialityPictureBox.Image = Image.FromFile(Ingredients[(string)CurrentSpecialPizza.toppings[0]]);
-            for (int i = 0; i < CurrentSpecialPizza.toppings.Count; i++)
+            numPizzaToppings = special.RightToppings.Count;
+            CurrentSpecialPizza.RightToppings = new List<string>();
+            for (int i = 0; i < numPizzaToppings; i++)
             {
-                CurrentSpecialPizzaPictureBoxes[i] = new PictureBox();
-                if (i != 0)
-                {
-                    CurrentSpecialPizzaPictureBoxes[i].Image = resizeImage(Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\" + Ingredients[(string)(CurrentSpecialPizza.toppings[i])]), SpecialityPictureBox.Size);
-                    CurrentSpecialPizzaPictureBoxes[i].Load(Directory.GetCurrentDirectory() + "\\Images\\" + Ingredients[(string)(CurrentSpecialPizza.toppings[i])]);
-                    CurrentSpecialPizzaPictureBoxes[i - 1].Controls.Add(CurrentSpecialPizzaPictureBoxes[i]);
-                }
-                else
-                {
-                    CurrentSpecialPizzaPictureBoxes[i].Image = resizeImage(Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\BasicPizzaCrust.jpg"), SpecialityPictureBox.Size);
-                    CurrentSpecialPizzaPictureBoxes[i].Load(Directory.GetCurrentDirectory() + "\\Images\\BasicPizzaCrust.jpg");
-                    SpecialityPictureBox.Controls.Add(CurrentSpecialPizzaPictureBoxes[i]);
-                }
-                CurrentSpecialPizzaPictureBoxes[i].Parent = SpecialityPictureBox;
-                CurrentSpecialPizzaPictureBoxes[i].SizeMode = PictureBoxSizeMode.CenterImage;
-                CurrentSpecialPizzaPictureBoxes[i].BorderStyle = BorderStyle.FixedSingle;
-                CurrentSpecialPizzaPictureBoxes[i].Anchor = AnchorStyles.Left;
-                CurrentSpecialPizzaPictureBoxes[i].Size = CurrentSpecialPizzaPictureBoxes[i].Image.Size;
-                CurrentSpecialPizzaPictureBoxes[i].Visible = true;
-                CurrentSpecialPizzaPictureBoxes[i].BackColor = Color.Transparent;
-                CurrentSpecialPizzaPictureBoxes[i].Location = new Point(SpecialityPictureBox.Location.X, SpecialityPictureBox.Location.Y);
-
+                CurrentSpecialPizza.RightToppings.Add(special.RightToppings[i]);
             }
-            //for (int i = 0; i < numPizzaToppings - 1; i++)
-            //{
-            //    //CurrentSpecialPizzaPictureBoxes[i].BringToFront();
-            //}
-            CurrentSpecialPizzaPictureBoxes[numPizzaToppings - 1].BringToFront();
+            SpecialityPictureBox.Image = Image.FromFile(Directory.GetCurrentDirectory() + "\\" + special.Name);
+            // scale maybe?
         }
-
-        public static Image resizeImage(Image i, Size size)
+        // pass in an image and the size
+        public static Image ResizeImage(Image i, Size size)
         {
             // construct a bitmap using the image, i, and fix it to a new size, then convert it back to an image
             return (Image)(new Bitmap(i, size));
         }
 
-        private IReadOnlyDictionary<string, string> LoadPizzaIngredients()
+        private void CreateYourOwnButton_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> ingreds = new Dictionary<string, string>();
-            ingreds["cheese"] = "Cheese.png";
-            ingreds["tomato sauce"] = "TomatoSauce.png";
-            ingreds["alfredo sauce"] = "AlfredoSauce.png";
-            ingreds["double pepperoni"] = "DoublePepperoni.png";
-            ingreds["pepperoni"] = "Pepperoni.png";
-            ingreds["sausage"] = "Sausage.png";
-            ingreds["bacon"] = "Bacon.png";
-            ingreds["ham"] = "Ham.png";
-            ingreds["red onions"] = "RedOnions.png";
-            ingreds["black olives"] = "BlackOlives.png";
-            ingreds["mushrooms"] = "Mushrooms.png";
-            ingreds["green bell peppers"] = "GreenBellPeppers.png";
-            ingreds["tomatoes "] = "Tomatoes.png";
-            return (IReadOnlyDictionary<string, string>)ingreds;
+            CustomizePizzaForm form = new CustomizePizzaForm();
+            form.Show();
+            this.Hide();
         }
 
-        private void LoadSpecialityPizza()
+        private void Checkout_Button_Click(object sender, EventArgs e)
         {
-            //SpecialityPictureBox.Image = Image.FromFile(Ingredients[(string)CurrentSpecialPizza.toppings[0]]);
-            for (int i = 0; i < CurrentSpecialPizza.toppings.Count; i++)
-            {
-                CurrentSpecialPizzaPictureBoxes[i] = new PictureBox();
-                CurrentSpecialPizzaPictureBoxes[i].Location = new Point(SpecialityPictureBox.Location.X, SpecialityPictureBox.Location.Y);
-                if (i != 0)
-                {
-                    CurrentSpecialPizzaPictureBoxes[i].Image = resizeImage(Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\" + Ingredients[(string)(CurrentSpecialPizza.toppings[i])]), SpecialityPictureBox.Size);
-                    CurrentSpecialPizzaPictureBoxes[i].Load(Directory.GetCurrentDirectory() + "\\Images\\" + Ingredients[(string)(CurrentSpecialPizza.toppings[i])]);
-                    CurrentSpecialPizzaPictureBoxes[i].Parent = CurrentSpecialPizzaPictureBoxes[i - 1];
-                }
-                else
-                {
-                    CurrentSpecialPizzaPictureBoxes[i].Image = resizeImage(Image.FromFile(Directory.GetCurrentDirectory() + "\\Images\\BasicPizzaCrust.jpg"), SpecialityPictureBox.Size);
-                    CurrentSpecialPizzaPictureBoxes[i].Load(Directory.GetCurrentDirectory() + "\\Images\\BasicPizzaCrust.jpg");
-                }
-                CurrentSpecialPizzaPictureBoxes[i].SizeMode = PictureBoxSizeMode.CenterImage;
-                CurrentSpecialPizzaPictureBoxes[i].BorderStyle = BorderStyle.FixedSingle;
-                CurrentSpecialPizzaPictureBoxes[i].Anchor = AnchorStyles.Left;
-                CurrentSpecialPizzaPictureBoxes[i].Size = CurrentSpecialPizzaPictureBoxes[i].Image.Size;
-                CurrentSpecialPizzaPictureBoxes[i].Visible = true;
-                this.Controls.Add(CurrentSpecialPizzaPictureBoxes[i]);
-                CurrentSpecialPizzaPictureBoxes[i].BackColor = Color.Transparent;
-
-            }
+            CartForm form = new CartForm();
+            form.Show();
+            this.Hide();
         }
-        //private void SpecialityComboBox_SelectedIndexChanged(object sender, MouseEventArgs e)
-        //{
-
-        //}
     }
 }

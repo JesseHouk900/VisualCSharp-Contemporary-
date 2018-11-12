@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +8,11 @@ namespace PizzaOrderingApp
     public class Pizza
     {
         private string name;
-        public ArrayList toppings;
+        private string [] coreComponent;
         private decimal price;
+        private decimal basePrice;
+        public List<string> LeftToppings;
+        public List<string> RightToppings;
         public string Name
         {
             get
@@ -25,75 +28,44 @@ namespace PizzaOrderingApp
             }
         }
 
-        //public ArrayList Toppings
-        //{
-        //    get
-        //    {
-        //        return toppings;
-        //    }
-        //    set
-        //    {
-        //        if (!(value is null) && value.Count != 0 && value[0].ToString() != "")
-        //        {
-        //            toppings = value;
-        //        }
-        //    }
-        //}
-
         public string Crust
         {
             get
             {
-                if (toppings != null && toppings[0] != null)
+                if (coreComponent != null && coreComponent[0] != null)
                 {
-                    return (string)toppings[0];
+                    return coreComponent[0];
                 }
                 else return "";
             }
             set
             {
-                if (toppings != null && toppings[0] != null)
+                if (coreComponent != null && coreComponent[0] != null)
                 {
-                    toppings[0] = value;
+                    coreComponent[0] = value;
                 }
+
             }
         }
         public string Sauce
         {
             get
             {
-                if (toppings != null && toppings[1] != null)
+                if (coreComponent != null && coreComponent[1] != null)
                 {
-                    return (string)toppings[1];
+                    return coreComponent[1];
                 }
                 else return "";
             }
             set
             {
-                if (toppings != null && toppings[1] != null)
+                if (coreComponent != null && coreComponent[1] != null)
                 {
-                    toppings[1] = value;
+                    coreComponent[1] = value;
                 }
             }
         }
-        public string Cheese
-        {
-            get
-            {
-                if (toppings != null && toppings[2] != null)
-                {
-                    return (string)toppings[2];
-                }
-                else return "";
-            }
-            set
-            {
-                if (toppings != null && toppings[2] != null)
-                {
-                    toppings[2] = value;
-                }
-            }
-        }
+        // total price for the pizza
         public decimal Price
         {
             get
@@ -103,6 +75,18 @@ namespace PizzaOrderingApp
             set
             {
                 price = value;
+            }
+        }
+        // Price based on the size of the pizza
+        public decimal BasePrice
+        {
+            get
+            {
+                return basePrice;
+            }
+            set
+            {
+                basePrice = value;
             }
         }
         // used for custom pizzas
@@ -125,32 +109,54 @@ namespace PizzaOrderingApp
         public Pizza(Pizza p2)
         {
             price = p2.Price;
-            if (toppings != null)
+            basePrice = p2.BasePrice;
+            coreComponent = new string [2];
+            for (int i = 0; i < 2; i++)
             {
-                toppings.Clear();
+                coreComponent[i] = p2.coreComponent[i];
             }
-            toppings = new ArrayList(p2.toppings.Count);
-            for (int i = 0; i < p2.toppings.Count; i++)
+            LeftToppings = new List<string>(p2.LeftToppings.Count);
+            for (int i = 0; i < p2.LeftToppings.Count; i++)
             {
-                toppings.Add(p2.toppings[i]);
-                //toppings[i] = new object();
-                //toppings[i] = p2.toppings[i];
+                LeftToppings.Add(p2.LeftToppings[i]);
+            }
+            RightToppings = new List<string>(p2.RightToppings.Count);
+            for (int i = 0; i < p2.RightToppings.Count; i++)
+            {
+                RightToppings.Add(p2.RightToppings[i]);
             }
         }
-
         // used for first making pizzas
         public void DefaultToppings()
         {
             // initialize an array list that will hold the toppings, with the 0th element as the size of the pizza
-            toppings = new ArrayList();
-
+            coreComponent = new string [2];
             // make the pizza size a medium
-            toppings.Add("medium");
+            coreComponent[0] = "medium";
+            basePrice = 8m;
             // add tomato sauce to the pizza
-            toppings.Add("tomato sauce");
+            coreComponent[1] = "tomato sauce";
             // add cheese to the pizza
-            toppings.Add("cheese");
+            LeftToppings = new List<string>();
+            LeftToppings.Add("cheese");
+            RightToppings = new List<string>();
+            RightToppings.Add("cheese");
         }
 
+        public decimal GetTotalPrice()
+        {
+            int lSize = LeftToppings.Count;
+            int rSize = RightToppings.Count;
+            decimal price = BasePrice;
+            for (int i = 0; i < lSize; i++)
+            {
+                price += CustomizePizzaForm.Toppings[LeftToppings[i]];
+            }
+            for (int i = 0; i < rSize; i++)
+            {
+                price += CustomizePizzaForm.Toppings[RightToppings[i]];
+            }
+            return price;
+        }
     }
 }
