@@ -1,5 +1,7 @@
 ﻿/*
  * Class for the cart that will hold the pizzas being ordered
+ * 
+ * Jesse Houk
  */
 using System;
 using System.Collections.Generic;

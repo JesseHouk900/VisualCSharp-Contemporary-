@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Class Defining a pizza
+ * 
+ * Jesse Houk
+ * 
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
